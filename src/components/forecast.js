@@ -15,7 +15,7 @@ function Forcast(props) {
      then query will be true otherwise city parameter will be true */
   const search = (city) => {
     axios.get(
-      `${apiKeys.base}weather?q=${city != "[object Object]"
+      `https://cors-anywhere.herokuapp.com/${apiKeys.base}weather?q=${city != "[object Object]"
       ? city
       : query}&units=metric&APPID=${apiKeys.key}`)
     // Data is fetched then set to setWeather(response.data) & will make setQuery("") empty to get another query from user.
