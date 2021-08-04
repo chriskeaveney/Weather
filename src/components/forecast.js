@@ -15,7 +15,7 @@ function Forcast(props) {
      then query will be true otherwise city parameter will be true */
   const search = (city) => {
     axios.get(
-      `https://cors-anywhere.herokuapp.com/${apiKeys.base}weather?q=${city != "[object Object]"
+      `${apiKeys.base}weather?q=${city != "[object Object]"
       ? city
       : query}&units=metric&APPID=${apiKeys.key}`)
     // Data is fetched then set to setWeather(response.data) & will make setQuery("") empty to get another query from user.
@@ -46,24 +46,17 @@ function Forcast(props) {
   // Conditional to calculate the location difference (in degrees)
   let difference = "the difference";
     if (props.temp && weather.main) {
-      console.log(props.temp);
-      console.log(weather.main.temp);
-
       if (props.temp > weather.main.temp) {
         difference = <div>It is {(props.temp - weather.main.temp).toFixed(2)} °c colder</div>;
-        console.log(difference);
       }
       else if (weather.main.temp > props.temp) {
         difference = <div>It is {(weather.main.temp - props.temp).toFixed(2)} °c hotter</div>;
-        console.log(difference);
       }
       else if (weather.main.temp== props.temp) {
         difference = <div>0°c</div>;
-        console.log(difference);
       }
     } else {
       difference = <div></div>;
-      console.log(difference);
     }
 
   return (

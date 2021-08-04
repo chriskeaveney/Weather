@@ -938,9 +938,9 @@ h4 {
   box-shadow: 0 1px 0 0 #0C1642 !important
 }
 
-h2, h3, p {
+/* h2, h3, p {
   font-family: "Roboto", sans-serif;
-}
+} */
 
 p {
   font-size: 14px;
