@@ -92,7 +92,7 @@ class Weather extends React.Component {
   // Async/Await used to fetch data from the API
   // After passing in coordinates, setState all the data gotten using API + display that data
   getWeather = async (lat, lon) => {
-    const api_call = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&APPID=01b687f8c8e6946d058d89eff0a67d20`);
+    const api_call = await fetch(`${apiKeys.base}weather?lat=${lat}&lon=${lon}&units=metric&APPID=${apiKeys.key}`);
     const data = await api_call.json();
     this.setState({
       lat: lat,
