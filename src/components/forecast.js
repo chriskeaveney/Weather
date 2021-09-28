@@ -40,7 +40,7 @@ function Forcast(props) {
   // Passes Dublin to fill blank space - swapped with user searched query.
   // [] - ensures code runs only once (per render)
   useEffect(() => {
-    search("Galway, IE");
+    search("Dublin, IE");
   }, []);
 
   // Conditional to calculate the location difference (in degrees)
